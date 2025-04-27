@@ -73,7 +73,9 @@ with sync_playwright() as p:
         ],
     )
     page = browser.new_page()
-    page.goto("https://recaptcha-demo.appspot.com/recaptcha-v2-checkbox.php")
+    url = sys.argv[1] if len(sys.argv) > 1 else "https://google.com"
+page.goto(url)
+
     input("Press Enter to exit...")
     browser.close()
 ```
